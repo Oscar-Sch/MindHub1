@@ -18,6 +18,7 @@ body{
     background-size: cover;
     background-position: center;
     color: white;
+    
 }
 
 
@@ -604,6 +605,7 @@ iframe{
         height: 20em;
         max-width: 0px;
         position: absolute;
+        flex-direction: column;
         left: 0;
         top: 15vh;
         background-color: var(--celeste-apagado);
@@ -725,7 +727,7 @@ iframe{
 @media (max-width:425px){
     /* ---------------HOME------------- */
     .flag{
-        width: 90%;
+        width: 80%;
         text-align: center;
     }
     

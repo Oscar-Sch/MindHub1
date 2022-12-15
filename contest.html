@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latam Travel</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+<body>
+    <header>
+        <!-- el label y el checkbox son para generar un boton de menu en pantallas
+        chicas y permitible ser activable y desactibable gracias al checkbox -->
+        <label for="menu"  class="menu"></label>
+        <input type="checkbox" name="menu" id="menu" class="menu">
+        <nav>
+            <!-- cada boton tiene un contenedor para poder trabajar con la pelota, que
+            es el icono que se carga debajo del anchor -->
+            <div class="ball-container">
+                <a href="./index.html">Home</a>
+                <i class='fa fa-soccer-ball-o fa-3x ball'></i> 
+            </div>
+            <div class="ball-container">
+                <a href="./about.html">About</a>
+                <i class='fa fa-soccer-ball-o fa-3x ball'></i> 
+            </div>
+            <div class="ball-container">
+                <a href="./contact.html">Contact</a>
+                <i class='fa fa-soccer-ball-o fa-3x ball'></i> 
+            </div>
+            <div class="ball-container">
+                <a href="./packages.html">Packages</a>
+                <i class='fa fa-soccer-ball-o fa-3x ball'></i> 
+            </div>
+            <div class="ball-container">
+                <a href="./services.html">Services</a>
+                <i class='fa fa-soccer-ball-o fa-3x ball'></i> 
+            </div>
+            <div class="ball-container">
+                <a href="#">Contest</a>
+                <i class='fa fa-soccer-ball-o fa-3x ball'></i> 
+            </div> 
+        </nav>
+        <img src="./assets/img/logo.png" alt="Latam Travel's logo" class="logo">
+    </header>
+    <main>
+        <h2>Contest</h2>
+        <h3>Do you feel lucky?</h3>
+        <div class="contest-container">
+            <div class="contest-container-img">
+                <img src="./assets/img/image8.png" alt="decorative picture">
+                <img src="./assets/img/prize.png" alt="decorative picture">
+            </div>
+            
+            <!-- en el formulario separo los con fieldset los campos que tienen
+            coherencia entre si, como contacto, genero, ubicacion, pago, y adherencia 
+            a los terminos y servicios. Dentro uso divs para estilar y replicar
+            el modelo brindado -->
+            <form action="./show_data.html" method="get">
+                <h3>Get a chance to win a football shirt filling this form</h3>
+                <fieldset>
+                    <div class="fieldset-column">
+                        <label>
+                            First Name
+                            <input type="text" name="First-Name">
+                        </label>
+                        <label>
+                            Adress
+                            <input type="text" name="Adress">
+                        </label>
+                        <label>
+                            Age
+                            <input type="number" name="Age">
+                        </label>
+                        <label>
+                            Phone
+                            <input type="tel" name="Phone">
+                        </label>
+                    </div>
+                    <div class="fieldset-column">
+                        <label>
+                            Last Name
+                            <input type="text" name="Last-Name">
+                        </label>
+                        <label>
+                            Zip Code
+                            <input type="number" name="Zip-Code">
+                        </label>
+                        <label>
+                            E-mail
+                            <input type="email" name="E-mail">
+                        </label>
+                        <div class="phone-radio">
+                        <label>
+                            Phone
+                            <input type="radio" name="Phone-type" value="Phone">
+                        </label>
+                        <label>
+                            Mobile
+                            <input type="radio" name="Phone-type" value="Mobile">
+                        </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="gender-container">
+                    <span>Gender</span>
+                    <label>
+                        Fem
+                        <input type="radio" name="Gender" value="F">
+                    </label>
+                    <label>
+                        Male
+                        <input type="radio" name="Gender" value="M">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label>
+                        Continent
+                        <select name="Continent">
+                            <option value="Africa">Africa</option>
+                            <option value="America">America</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </label>
+                    <label>
+                        Country
+                        <input type="text" name="Country">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <div class="payment-option">
+                        <span>Payment Option:</span>
+                        <label>
+                            Cash
+                            <input type="radio" name="Payment" value="Cash">
+                        </label>
+                        <label>
+                            Credit Card
+                            <input type="radio" name="Payment" value="Credit">
+                        </label>
+                        <label>
+                            Debit Card
+                            <input type="radio" name="Payment" value="Debit">
+                        </label>
+                    </div>
+                    <label class="services-label">
+                        Services
+                        <textarea name="Services"></textarea>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label class="terms-label">
+                        I accept terms and conditions
+                        <input type="checkbox" name="Terms" required>
+                    </label>
+                </fieldset>
+                <input type="submit" value="Send" class="submit">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.440440154635!2d-58.818352685923195!3d-27.486674682883834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456b777360a965%3A0x1b570dbe8071963b!2sAvenida%20Juan%20Ramon%20Vidal%2C%20Corrientes!5e0!3m2!1ses!2sar!4v1671061633294!5m2!1ses!2sar"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>Av. Juan Ramón Vidal, Corrientes</p>
+        </div>
+        <div class="footer_contact-data">
+            <div class="email">
+                <span>Email: </span>
+                <a href="mailto:LatamTravel@gmail.com">LatamTravel@gmail.com</a>
+            </div>
+            <div class="phone">
+                <span>Phone: </span>
+                <a href="tel:+0357-67231320">0357-67231320</a>
+            </div>
+        </div>
+        <div class="developer-data">
+            <p>Developed by <span>Oscar Schwerdt</span></p>
+            <div class="developer-data_container">
+                <span>Email: </span>
+                <a href="mailto:oscarschwerdt@gmail.com">oscarschwerdt@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

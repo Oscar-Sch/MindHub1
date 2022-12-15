@@ -1,0 +1,742 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --celeste:rgba(14,157,243,1);
+    --celeste-oscuro:rgb(17, 128, 197);
+    --celeste-clarito:rgb(30, 195, 251);
+    --celeste-apagado:rgb(19, 107, 161);
+    --celeste-translucido:rgb(17, 92, 139,.7);
+    
+}
+body{
+    background: url(../img/image15.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
+/* ----------------------------HEADER---------------------------- */
+
+header{
+    background: var(--celeste);
+    background: linear-gradient(0deg, var(--celeste) 0%, var(--celeste) 33%, rgba(255,255,255,1) 34%, rgba(235,235,235,1) 65%, var(--celeste) 66%, var(--celeste) 100%);
+    height: 15vh;
+    box-shadow: 0 3px 10px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+    /* esta clase sirve para estilar el checkbox y el label que uso para el
+    boton para el nav pantallas pequeñas */
+.menu{
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--celeste-oscuro);
+    border-radius: .5em;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px black;
+    position: relative;
+    margin-left: 2em;
+    z-index: 0;
+}
+    /* escondo el checkbox para qie no se vea, total al clickear el label
+    ya marca o desmarca el campo */
+.menu + input{
+    display: none;
+}
+    /* cuando se clickea cambio el fondo para que se aprecie la interaccion */
+.menu:active{
+    background-color: var(--celeste-apagado);
+    
+}
+    /* selecciono al hermano nav del checkbox marcado, es decir, estos cambios
+    se aplican cuando activamos el menu */
+.menu:checked+nav{
+    flex-direction: column;
+    align-items: center;
+    gap: .4em;
+    transition: all .2s ease-out;
+    max-width: 200px;
+    opacity: 1;
+    pointer-events: all;
+    z-index: 10;
+    box-shadow: 3px 6px 10px black;
+    border-radius: 0 0 1em 0;
+}
+.menu:checked+nav *{
+    transition: all .5s ease-out;
+}
+    /* uso pseudo elementos para estilar el boton del menu */
+.menu::before{
+    content: "";
+    width: 80%;
+    height: .2em;
+    background-color: white;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    z-index: 2;
+}
+.menu::after{
+    content: "";
+    width: 80%;
+    height: .2em;
+    background-color: white;
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+}
+nav{
+    padding: 1.2em 0;
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+}
+nav a{
+    min-width: 5rem;
+    border-radius: 1em;
+    border: 2px solid black;
+    background-color: var(--celeste-clarito);
+    font-size: 1.1rem;
+    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+        #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+    text-decoration: none;
+    color: white;
+    padding: .3em .7em;
+    margin: 0 .3em;
+    
+    font-weight: bolder;
+    box-shadow: 1px 1px 5px black;
+}
+    /* animaciones paralos botones del nav y la pelota */
+nav .ball-container:hover a{
+    background-color: #fffb;
+    color: black;
+    text-shadow: none;
+    transition: all .5s;
+}
+nav .ball-container:hover .ball{
+    transform: rotateZ(720deg);
+    translate: 10% -70%;
+    transition: transform 1s ease-out, translate 1s ease-out;
+}
+
+.logo{
+    width: 4em;
+    margin-right: 1em;
+    filter: drop-shadow(2px 2px 7px black);
+}
+.ball-container{
+    position: relative;
+    padding: .2em;
+    z-index: 1;
+}
+.ball-container a{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+    /* estilo y posiciono la pelota */
+.ball{
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -70%;
+    z-index: 0;
+    background-color: white;
+    border-radius: 50%;
+    
+}
+
+
+/* -----------------------------------MAIN----------------------------------- */
+
+main{
+    background-color: #f4faffcc;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    border-radius: 2rem 2rem 0 0;
+}
+
+/* ----------HOME---------- */
+
+.banner-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.banner-section>span{
+    position: relative;
+    z-index: 2;
+    top: -1em;
+    box-shadow: 0px 5px 25px black;
+}
+/* -------------------------------ESCARAPELA----------------------------- */
+
+    /* creo el cuerpo principal de la escarapela en el h1 */
+h1{
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 2rem;
+    background: var(--celeste);
+    background: linear-gradient(0deg, var(--celeste) 0%, var(--celeste) 33%, rgba(255,255,255,1) 34%, rgba(235,235,235,1) 65%, var(--celeste) 66%, var(--celeste) 100%);
+    font-weight: 900;
+    padding: .5em 1em;
+    border-radius: .1em;
+
+}
+.flag{
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+    top: -1em;
+    box-shadow: 0 10px 20px black;
+}
+    /* uso pseudoelementos para crear las solapas y la sombra */
+.flag::after{
+    content: "";
+    width: 2em;
+    height: 2em;
+    background-color: #0005;
+    position: absolute;
+    bottom: -13%;
+    left: 2px;
+    clip-path: polygon(0 0, 74% 0, 100% 100%, 0% 70%);
+    z-index: -1;
+
+}
+.flag::before{
+    content: "";
+    width: 2em;
+    height: 2em;
+    background-color: #0005;
+    position: absolute;
+    bottom: -13%;
+    right: 2px;
+    clip-path: polygon(26% 0, 100% 0, 100% 68%, 0 100%);
+    z-index: -1;
+
+}
+h1::after{
+    content: "";
+    width: 3em;
+    height: 100%;
+    clip-path: polygon(100% 0, 60% 50%, 100% 100%, 0 100%, 26% 0);
+    background: var(--celeste);
+    background: linear-gradient(0deg, var(--celeste) 0%, var(--celeste) 33%, rgba(255,255,255,1) 34%, rgba(235,235,235,1) 65%, var(--celeste) 66%, var(--celeste) 100%);
+    position: absolute;
+    right: -25%;
+    bottom: -13%;
+    filter: drop-shadow(5px 5px 10px);
+    z-index: -3;
+}  
+h1::before{
+    content: "";
+    width: 3em;
+    height: 100%;
+    clip-path: polygon(0 0, 74% 0, 100% 100%, 0 99%, 40% 50%);
+    background: var(--celeste);
+    background: linear-gradient(0deg, var(--celeste) 0%, var(--celeste) 33%, rgba(255,255,255,1) 34%, rgba(235,235,235,1) 65%, var(--celeste) 66%, var(--celeste) 100%);
+    position: absolute;
+    left: -25%;
+    bottom: -13%;
+    box-shadow: 5px 5px 10px black;
+    z-index: -3;
+    
+}
+/* ---------------------------------------------------------------------------------- */
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 2em;
+    color: var(--celeste-oscuro);
+    padding: 1em 0;
+    text-decoration: underline;
+}
+h3{
+    color: black;
+}
+.banner-container{
+    width: 50%;
+}
+.banner{
+    width: 100%;
+    border-radius: 1em;
+    box-shadow: 5px 5px 10px black;
+}
+.services{
+    width: 100%;
+    padding: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.services_content{
+    width: 40%;    
+    background-color: var(--celeste-translucido);
+    padding: 2em;
+    border-radius: 1em;
+}
+.services_content>h3{
+    padding: 1em 0;
+    color: white;
+}
+
+.services_img{
+    width: 45%;
+    object-fit: cover;
+    border-radius: 1em;
+    
+}
+
+/* ----------------ABOUT---------------- */
+
+.about-text{
+    width: 60%;
+    color: black;
+    font-weight: 700;
+}
+.about-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about-subsection{
+    padding: 1em;
+    margin: 1em 0;
+    background-color: var(--celeste-translucido);
+    display: flex;
+    justify-content: space-between;
+    border-radius: .5em;
+}
+
+.about-subsection>p{
+    width: 50%;
+
+}
+.about-subsection>img{
+    width: 30%;
+    min-width: 150px;
+    object-fit: contain;
+}
+
+/* -----------------CONTACT---------------- */
+
+.contact-img{
+    width: 60%;
+    margin-bottom: 3em;
+    border-radius: .5em;
+}
+.contact-info{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+}
+.contact-info span{
+    color: black;
+}
+.email{
+    margin-bottom: 2em;
+}
+
+/* -----------------PACKAGES------------------ */
+
+.packages-main{
+    justify-content: space-around;
+    min-height: 80vh;
+}
+.packages-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2em;
+
+}
+.packages-title *{
+    margin: 0;
+    padding: 0;
+}
+table{
+    width: 80%;
+    margin: 3em 0;
+}
+table,table *{
+    border: 3px solid black;
+    border-collapse: collapse;
+    color: black;
+    padding: .5em 2em;
+    text-align: center;
+    font-weight: bolder;
+}
+tr{
+    background-color: var(--celeste-oscuro);
+}
+tr *{
+    color: #ddd;
+}
+    /* doy colores distintos a las filas pares e impares para mas placer */
+tr:nth-child(odd){
+    background-color: var(--celeste-clarito);
+}
+tr:nth-child(odd) *{
+    color: black;
+}
+thead *{
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+}
+.center-column th{
+    padding: 0 2em;
+}
+
+/* ----------------------SERVICES--------------------- */
+
+.services-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5em;
+    margin: 3em 0;
+}
+.services_sub-containers{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--celeste-translucido);
+    border-radius: 1em;
+    padding: 2em;
+}
+.services_sub-containers img{
+    max-width: 30%;
+    border-radius: 1em;
+    object-fit: contain;
+}
+.services_sub-containers div{
+    width: 40%;
+    
+}
+.lista{
+    list-style-position: inside;
+}
+
+/* -------------------CONTEST-------------------- */
+
+.contest-container{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 3em 0;
+}
+.contest-container-img{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contest-container-img img{
+    width: 100%;
+    padding: 1em;
+    background-color: var(--celeste-translucido);
+    border-radius: 1em;
+}
+/* --------------FORM-------------- */
+form{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 1em;
+    max-width: 80%;
+    align-self: center;
+
+}
+form h3{
+    margin: 1em 0;
+}
+fieldset{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    margin: .1em 0;
+    
+}
+.fieldset-column{
+    display: flex;
+    flex-direction: column;
+}
+.fieldset-column label{
+    display: flex;
+    justify-content: space-between;
+}
+.phone-radio {
+    display: flex;
+}
+.payment-option{
+    display: flex;
+    flex-direction: column;
+}
+.payment-option label{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: .3em;
+}
+.services-label{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+textarea{
+    height: 80%;
+    resize: none;
+}
+.gender-container{
+    justify-content: flex-start;
+}
+label,form span{
+    padding: .3em 1em;
+}
+.terms-label{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em 0;
+}
+.submit{
+    padding: .5em 2em;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    background-color: var(--celeste);
+    color: white;
+}
+/* ----------------------------------FOOTER----------------------------------- */
+footer{
+    background-color: var(--celeste-oscuro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2em 2em 0 0;
+    box-shadow: 0 -5px 20px black;
+}
+footer span{
+    font-weight: bolder;
+}
+.footer_contact-data{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer_contact-data a{
+    color: white;
+}
+.developer-data{
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+.developer-data *{
+    text-decoration: underline;
+    color: white;
+}
+.developer-data p{
+    margin-bottom: 2em;
+}
+
+.map{
+    max-width: 25%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.map p{
+    font-style: italic;
+    margin-top: .2em;
+}
+
+iframe{
+    width: 100%;
+    border-radius: 1em 1em .5em .5em;
+    border: 2px solid black;
+}
+/* -------------------------QUERIES-------------------------- */
+
+
+@media (max-width:768px){
+    /* ---------------HEADER----------- */
+    .menu{
+        display: inline-block;
+    }
+    /* cuando la pantalla se achica saco al nav del flujo y lo escondo 
+    hasta que el boton de menu se active y lo muestre */
+    nav{
+        opacity: 0;
+        pointer-events: none;
+        height: 20em;
+        max-width: 0px;
+        position: absolute;
+        left: 0;
+        top: 15vh;
+        background-color: var(--celeste-apagado);
+
+    }
+    nav .ball-container:hover .ball{
+        left: 50%;
+    }
+    .ball{
+        left: -50%;
+    }
+
+    /* -------------HOME------------ */
+    .banner-container{
+        width: 90%;
+    }
+    .services{
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        padding: 1em;
+    }
+    .services_content{
+        width: 100%;
+    }
+    
+    .services_img{
+        width: 100%;        
+    }
+    /* ----------------ABOUT--------------- */
+    .about-text{
+        text-align: center;
+    }
+    .about-container{
+        width: 96%;
+    }
+    .about-subsection>img{
+        min-width: 120px;
+    }
+    /* ------------------CONTACT-------------- */
+    .contact-img{
+        width: 80%;
+        margin-bottom: 1em;
+    }
+    .contact-info{
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+    }
+    /* ----------------PACKAGES--------------- */
+    thead *{
+        padding: 0;
+    }
+    tbody *{
+        padding: 1em 0;
+    }
+    /* -----------------SERVICES--------------- */
+    .services-container{
+        width: 90%;
+    }
+    .services_sub-containers{
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+    .services_sub-containers img{
+        max-width: 90%;
+    }
+    .services_sub-containers div{
+        width: 90%;        
+    }
+
+    
+    /* -----------------CONTEST--------------- */
+    .contest-container{
+        flex-direction: column;
+    }
+    .contest-container-img{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    .contest-container-img img{
+        width: 40%;
+    }
+    form{
+        max-width: 100%;
+    }
+    label{
+        flex-direction: column;
+    }
+    .fieldset-column label>input{
+        width: 80%;
+    }
+    /* ------------------FOOTER---------------- */
+    footer{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .footer_contact-data{
+        align-items: flex-start;
+        padding:0 1em;
+        margin-bottom: 2em;
+    }
+    .developer-data{
+        margin:0 1em;
+        margin-bottom: 2em;
+    }
+    .developer-data p{
+        margin-bottom: 2em;
+    }
+    .map{
+        min-width: 200px;
+    }
+}
+@media (max-width:425px){
+    /* ---------------HOME------------- */
+    .flag{
+        width: 90%;
+        text-align: center;
+    }
+    
+    
+    /* ---------------ABOUT------------- */
+    .about-subsection{
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .about-subsection p,.about-subsection img{
+        width: 90%;
+    }
+}

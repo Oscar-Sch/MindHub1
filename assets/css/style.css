@@ -127,7 +127,7 @@ nav .ball-container:hover a{
 nav .ball-container:hover .ball{
     transform: rotateZ(720deg);
     translate: 10% -70%;
-    transition: transform 1s ease-out, translate 1s ease-out;
+    
 }
 
 .logo{
@@ -156,7 +156,7 @@ nav .ball-container:hover .ball{
     z-index: 0;
     background-color: white;
     border-radius: 50%;
-    
+    transition: transform 1s ease-out, translate 1s ease-out;
 }
 
 
@@ -592,7 +592,7 @@ iframe{
 /* -------------------------QUERIES-------------------------- */
 
 
-@media (max-width:768px){
+@media (max-width:769px){
     /* ---------------HEADER----------- */
     .menu{
         display: inline-block;
@@ -726,11 +726,19 @@ iframe{
 }
 @media (max-width:425px){
     /* ---------------HOME------------- */
+    main{
+        width: 100%;
+    }
     .flag{
         width: 80%;
         text-align: center;
     }
-    
+    h1::after{
+        right: -20%;
+    }
+    h1::before{
+        left: -20%;
+    }
     
     /* ---------------ABOUT------------- */
     .about-subsection{
